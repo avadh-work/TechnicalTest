@@ -1,0 +1,28 @@
+name: iOS Build & Test
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+  pull_request:
+    branches:
+      - main
+      - develop
+
+jobs:
+  build:
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Xcode environment
+        run: sudo xcode-select -s /Applications/Xcode_16.2.app
+
+      - name: Build the project
+        run: xcodebuild clean build -project TechnicalTest.xcodeproj -scheme TechnicalTest -destination 'platform=iOS Simulator,name=iPhone 16,OS=latest'
+
+      - name: Run tests
+        run: xcodebuild test -project TechnicalTest.xcodeproj -scheme TechnicalTest -destination 'platform=iOS Simulator,name=iPhone 16,OS=latest'
