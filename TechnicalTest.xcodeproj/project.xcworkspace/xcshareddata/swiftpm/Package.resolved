@@ -1,0 +1,15 @@
+{
+  "originHash" : "32a80c65bd242c5674bb40cf21bbd5fc1f03b5d5ff3983ffea743a875d257fba",
+  "pins" : [
+    {
+      "identity" : "networkmanager",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/avadh-work/NetworkManager.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "b428f45801489ed3a183828265168cc2a876f180"
+      }
+    }
+  ],
+  "version" : 3
+}
